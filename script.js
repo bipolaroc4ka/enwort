@@ -15,3 +15,19 @@ form.addEventListener('submit', e => {
       statusDiv.innerHTML = 'Ошибка отправки. Попробуйте ещё раз.';
     });
 });
+
+window.addEventListener('DOMContentLoaded', init)
+
+function init() {
+  Tabletop.init({
+    key: 'AKfycbxzs65YgWdi5roZ8yd89dYmPdqQEyJvj4XotqDJDBg2vaCoXdcX73bTJQJMompyr42bIw', // <-- вставь сюда свой ID таблицы
+    callback: showData,
+    simpleSheet: true
+  })
+}
+
+function showData(data) {
+  data.forEach(item => {
+    console.log(item.name + ": " + item.message);
+  })
+}
