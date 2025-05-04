@@ -1,19 +1,17 @@
-document.getElementById('myForm').addEventListener('submit', function(e) {
+// Замените URL на ваш URL из Google Apps Script Web App
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxzs65YgWdi5roZ8yd89dYmPdqQEyJvj4XotqDJDBg2vaCoXdcX73bTJQJMompyr42bIw/exec';
+
+const form = document.getElementById('myForm');
+const statusDiv = document.getElementById('status');
+
+form.addEventListener('submit', e => {
   e.preventDefault();
-
-  const form = e.target;
-  const data = new FormData(form);
-  const params = new URLSearchParams(data);
-
-  fetch('https://script.google.com/macros/s/AKfycbxzs65YgWdi5roZ8yd89dYmPdqQEyJvj4XotqDJDBg2vaCoXdcX73bTJQJMompyr42bIw/exec?' + params.toString(), {
-    method: 'POST'
-  })
-  .then(response => response.text())
-  .then(result => {
-    document.getElementById('status').innerText = 'Успешно отправлено!';
-    form.reset();
-  })
-  .catch(error => {
-    document.getElementById('status').innerText = 'Ошибка!';
-  });
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => {
+      statusDiv.innerHTML = 'Сообщение отправлено!';
+      form.reset();
+    })
+    .catch(error => {
+      statusDiv.innerHTML = 'Ошибка отправки. Попробуйте ещё раз.';
+    });
 });
