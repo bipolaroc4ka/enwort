@@ -4,23 +4,27 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycbz9JXMxygYFUVi_UUdK75
 
 const statusDiv = document.getElementById('status');
 
-function sendScore(name, score) {
+form.addEventListener('submit', e => {
+  e.preventDefault();
+
+  // Собираем данные из формы
+  const formData = new FormData(form);
+  const name = formData.get('name');
+  const score = formData.get('score'); // предполагается, что есть поле score в форме
+
+  // Отправляем данные в нужном формате
   fetch(scriptURL, {
     method: 'POST',
     body: JSON.stringify({ name, score }),
     headers: { 'Content-Type': 'application/json' }
-  }).then(() => getScores());
-}
-form.addEventListener('submit', e => {
-  e.preventDefault();
-  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-    .then(response => {
-      statusDiv.innerHTML = 'Сообщение отправлено!';
-      form.reset();
-    })
-    .catch(error => {
-      statusDiv.innerHTML = 'Ошибка отправки. Попробуйте ещё раз.';
-    });
+  })
+  .then(response => {
+    statusDiv.innerHTML = 'Сообщение отправлено!';
+    form.reset();
+  })
+  .catch(error => {
+    statusDiv.innerHTML = 'Ошибка отправки. Попробуйте ещё раз.';
+  });
 });
 function getScores() {
   fetch(scriptURL)
