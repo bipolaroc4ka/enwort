@@ -1,6 +1,6 @@
 // Замените URL на ваш URL из Google Apps Script Web App
 const scriptURL = 'https://script.google.com/macros/s/AKfycbz9JXMxygYFUVi_UUdK75GN8dYbpBzfsl_z8fGpSrCw2ItD6PUr4ZXqj3VW1D0Ib3koJQ/exec';
-
+const form = document.getElementById('myForm'); // Получаем элемент формы по ID
 
 const statusDiv = document.getElementById('status');
 
