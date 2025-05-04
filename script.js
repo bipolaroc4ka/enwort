@@ -256,7 +256,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-initBoard();
+
 
 
 
