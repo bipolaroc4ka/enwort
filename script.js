@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded', init)
 
 function init() {
   Tabletop.init({
-    key: 'AKfycbxzs65YgWdi5roZ8yd89dYmPdqQEyJvj4XotqDJDBg2vaCoXdcX73bTJQJMompyr42bIw', // <-- вставь сюда свой ID таблицы
+    key: '10WxGqkd7Jt2c0h83a54MHXmWYogR7M5Zncr2EIy8JdI', // <-- вставь сюда свой ID таблицы
     callback: showData,
     simpleSheet: true
   })
