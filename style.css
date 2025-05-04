@@ -62,5 +62,15 @@ h1 {
   border: none;
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  /* Применяется, если ширина экрана меньше 768px — обычно телефон */
+  #keyboard {
+    /* Сделаем кнопки чуть крупнее на телефоне */
+    .keyboard-key {
+      padding: 15px 20px;
+      font-size: 20px;
+    }
+  }
+}
 
 
