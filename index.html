@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
-  <meta charset="UTF-8">
-  <title>Форма отправки</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
 </head>
 <body>
+    <h1> Играем в Wordle </h1>
+    
+    <div id="game-board">
 
-<form id="myForm">
-  <input type="text" name="name" placeholder="Ваше имя" required>
-  <textarea name="score" placeholder="Рекорд" required></textarea>
-  <button type="submit">Отправить</button>
-</form>
+    </div>
 
-<div id="status"></div>
-
-<script src="script.js"></script>
+<script
+src="https://code.jquery.com/jquery-3.6.0.min.js"
+integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="script.js" type="module"></script>
 </body>
 </html>
