@@ -43,22 +43,64 @@ h1 {
    .filled-box {
      border: 3px solid black;
    }
-#keyboard {
-  margin-top: 20px;
+/* Сделать игровое поле отзывчивым */
+#game-board {
+  display: grid;
+  gap: 5px;
+  margin: 10px auto;
+  max-width: 90vw;
 }
 
-.keyboard-row {
+/* Клетки в строках */
+.letter-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+}
+
+.letter-box {
+  width: 14vw;
+  height: 14vw;
+  max-width: 60px;
+  max-height: 60px;
+  border: 2px solid #000;
+  font-size: 6vw;
+  max-font-size: 28px;
+  text-transform: uppercase;
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 5px;
 }
 
-.keyboard-key {
-  margin: 2px;
-  padding: 10px 15px;
-  font-size: 16px;
-  border-radius: 5px;
-  background-color: #d3d6da;
-  border: none;
-  cursor: pointer;
+/* Для маленьких экранов — чуть меньше отступов */
+@media (max-width: 600px) {
+  .letter-box {
+    width: 16vw;
+    height: 16vw;
+    font-size: 5vw;
+  }
 }
+
+/* Клавиатура */
+#keyboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.key-button {
+  margin: 3px;
+  padding: 10px 14px;
+  font-size: 5vw;
+  min-width: 8vw;
+  border-radius: 5px;
+}
+
+@media (min-width: 601px) {
+  .key-button {
+    font-size: 18px;
+    min-width: 40px;
+  }
+}
+
