@@ -1,4 +1,9 @@
 /* заголовок страницы */
+html, body {
+    touch-action: manipulation; 
+    -ms-touch-action: manipulation;
+}
+
 h1 {
     text-align: center;
    }
