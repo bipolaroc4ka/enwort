@@ -211,3 +211,32 @@ document.addEventListener("keydown", (e) => {
 
 
 initBoard();
+
+// создаём скрытое поле input
+const hiddenInput = document.createElement('input');
+hiddenInput.id = 'hidden-input';
+hiddenInput.type = 'text';
+hiddenInput.autocomplete = 'off';
+hiddenInput.autocapitalize = 'none';
+hiddenInput.style.position = 'absolute';
+hiddenInput.style.opacity = '0';
+hiddenInput.style.pointerEvents = 'none';
+document.body.appendChild(hiddenInput);
+
+// при первом тапе — фокусируем input
+document.addEventListener('click', () => {
+    hiddenInput.focus();
+}, { once: true });
+
+// при вводе буквы — добавляем букву в игру
+hiddenInput.addEventListener('input', (e) => {
+    const value = e.target.value.toLowerCase();
+    if (value.length > 0) {
+        const lastChar = value[value.length - 1];
+        if (lastChar.match(/[a-z]/i)) {
+            insertLetter(lastChar);
+        }
+        e.target.value = '';  // очищаем поле после ввода
+    }
+});
+
