@@ -11,7 +11,17 @@ function sendScore(name, score) {
     headers: { 'Content-Type': 'application/json' }
   }).then(() => getScores());
 }
-
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => {
+      statusDiv.innerHTML = 'Сообщение отправлено!';
+      form.reset();
+    })
+    .catch(error => {
+      statusDiv.innerHTML = 'Ошибка отправки. Попробуйте ещё раз.';
+    });
+});
 function getScores() {
   fetch(scriptURL)
     .then(res => res.json())
