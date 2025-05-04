@@ -1,5 +1,5 @@
 // Замените URL на ваш URL из Google Apps Script Web App
-const scriptURL = 'https://script.google.com/macros/s/AKfycbysfmelCyvHgZj3CVXKdhgM2Z8-529wi-rvcWUriLAjt1uuhI5apqi2Q_Dn4t1kYvH4pg/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwiQHdcOs3jyh8IsI1sMvTkMELWueeF5AarUKC5yHywEK_XRMinzH9z5zAriH8VmfTgqw/exec';
 
 
 const statusDiv = document.getElementById('status');
